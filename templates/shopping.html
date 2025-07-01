@@ -1,0 +1,19 @@
+<h2>Welcome, {{ shopper }}</h2>
+
+<h3>Store Inventory</h3>
+{{ inventory_table | safe }}
+
+<h3>Your Cart</h3>
+{{ cart_table | safe }}
+
+<form method="POST">
+  <label>Item Name:</label>
+  <input type="text" name="item" required>
+  <select name="action">
+    <option value="buy">Buy</option>
+    <option value="return">Return</option>
+  </select>
+  <button type="submit" class="btn btn-success">Submit</button>
+</form>
+
+<a href="{{ url_for('index') }}" class="btn btn-secondary mt-3">Back to Home</a>

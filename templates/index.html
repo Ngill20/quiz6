@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+
+{% block title %}Home - Grocery Store{% endblock %}
+
+{% block content %}
+<div class="text-center">
+  <h2>Welcome to the Grocery Store App</h2>
+  <p class="lead">Choose an action to get started:</p>
+
+  <a href="{{ url_for('query') }}" class="btn btn-success btn-lg m-2">Insert Grocery Items</a>
+  <a href="{{ url_for('query2') }}" class="btn btn-info btn-lg m-2">View All Grocery Items</a>
+  <a href="{{ url_for('shop') }}" class="btn btn-secondary btn-lg m-2">Start Shopping</a>
+</div>
+{% endblock %}

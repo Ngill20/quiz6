@@ -1,0 +1,24 @@
+<!-- templates/results.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Results</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body class="container mt-4">
+    <h2>Grocery Inventory</h2>
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        <div class="alert alert-info">
+          {% for message in messages %}
+            <p>{{ message }}</p>
+          {% endfor %}
+        </div>
+      {% endif %}
+    {% endwith %}
+    {% for table in tables %}
+        {{ table | safe }}
+    {% endfor %}
+    <a href="{{ url_for('index') }}" class="btn btn-primary mt-3">Back to Home</a>
+</body>
+</html>
